@@ -47,6 +47,7 @@ UNKNOWN_CATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_category_id"]
 UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
 ```
 ### Como os dados são usados no prompt?
+Os dados da base de conhecimento são injetados diretamente no system prompt, junto com as transações coladas pelo usuário. Exemplo de contexto montado:
 ```TAXONOMIA DE CATEGORIAS:
 {
   "categorias": [
