@@ -71,7 +71,7 @@ PRIVACIDADE:
 
 DISCLAIMER:
 - Ao final de toda resposta, inclua: "⚠️ Este resumo é apenas para organização pessoal e não constitui aconselhamento financeiro."
-
+```
 ---
 
 ## Exemplos de Interação
