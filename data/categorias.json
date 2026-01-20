@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "currency": "BRL",
+  "categories": [
+    {
+      "id": "moradia",
+      "name": "Moradia",
+      "budget_pct_suggested": { "min": 0.25, "max": 0.40 },
+      "subcategories": [
+        { "id": "aluguel_financiamento", "name": "Aluguel/Financiamento" },
+        { "id": "condominio", "name": "Condomínio" },
+        { "id": "contas_utilidades", "name": "Contas (água/luz/gás)" },
+        { "id": "internet_telefone", "name": "Internet/Telefone" },
+        { "id": "manutencao", "name": "Manutenção" }
+      ],
+      "keywords": [
+        { "pattern": "ALUGUEL|LOCACAO|IMOBILIAR", "subcategory_id": "aluguel_financiamento" },
+        { "pattern": "CONDOM", "subcategory_id": "condominio" },
+        { "pattern": "ENERGIA|ELETRIC|LIGHT|ENEL|CPFL|COELBA", "subcategory_id": "contas_utilidades" },
+        { "pattern": "AGUA|SABESP|COPASA|SANEPAR|CEDAE|GAS|COMGAS", "subcategory_id": "contas_utilidades" },
+        { "pattern": "VIVO|CLARO|TIM|OI|NET|ALGAR|INTERNET|FIBRA", "subcategory_id": "internet_telefone" }
+      ]
+    },
+    {
+      "id": "alimentacao",
+      "name": "Alimentação",
+      "budget_pct_suggested": { "min": 0.10, "max": 0.20 },
+      "subcategories": [
+        { "id": "supermercado", "name": "Supermercado" },
+        { "id": "restaurante", "name": "Restaurante" },
+        { "id": "delivery", "name": "Delivery" },
+        { "id": "cafes_lanches", "name": "Cafés/Lanches" }
+      ],
+      "keywords": [
+        { "pattern": "IFOOD|RAPPI|UBER\\s*EATS|DELIVERY", "subcategory_id": "delivery" },
+        { "pattern": "SUPERMERC|MERCAD|HIPERMERC|ATACAD", "subcategory_id": "supermercado" },
+        { "pattern": "PADARIA|CAFE|CAFETERIA", "subcategory_id": "cafes_lanches" },
+        { "pattern": "RESTAUR|LANCHON|PIZZAR|HAMBURGU", "subcategory_id": "restaurante" }
+      ]
+    },
+    {
+      "id": "transporte",
+      "name": "Transporte",
+      "budget_pct_suggested": { "min": 0.05, "max": 0.15 },
+      "subcategories": [
+        { "id": "combustivel", "name": "Combustível" },
+        { "id": "app", "name": "Transporte por app" },
+        { "id": "publico", "name": "Transporte público" },
+        { "id": "estacionamento", "name": "Estacionamento" },
+        { "id": "manutencao", "name": "Manutenção" }
+      ],
+      "keywords": [
+        { "pattern": "UBER|99APP|99\\s*POP|CABIFY", "subcategory_id": "app" },
+        { "pattern": "POSTO|GASOLINA|ETANOL|DIESEL", "subcategory_id": "combustivel" },
+        { "pattern": "METRO|CPTM|ONIBUS|BILHETE|SPTRANS", "subcategory_id": "publico" },
+        { "pattern": "ESTACION|PARK", "subcategory_id": "estacionamento" }
+      ]
+    },
+    {
+      "id": "saude",
+      "name": "Saúde",
+      "budget_pct_suggested": { "min": 0.05, "max": 0.15 },
+      "subcategories": [
+        { "id": "farmacia", "name": "Farmácia" },
+        { "id": "consultas_exames", "name": "Consultas/Exames" },
+        { "id": "plano", "name": "Plano de saúde" }
+      ],
+      "keywords": [
+        { "pattern": "DROGA|FARMAC|PACHECO|RAIA|PANVEL", "subcategory_id": "farmacia" },
+        { "pattern": "HOSP|CLINIC|LABORAT|EXAME|CONSULT", "subcategory_id": "consultas_exames" },
+        { "pattern": "UNIMED|AMIL|BRADESCO\\s*SAUDE|SULAMERICA|NOTREDAME", "subcategory_id": "plano" }
+      ]
+    },
+    {
+      "id": "educacao",
+      "name": "Educação",
+      "budget_pct_suggested": { "min": 0.03, "max": 0.10 },
+      "subcategories": [
+        { "id": "cursos", "name": "Cursos" },
+        { "id": "mensalidades", "name": "Mensalidades" },
+        { "id": "livros", "name": "Livros" }
+      ],
+      "keywords": [
+        { "pattern": "CURSO|UDEMY|ALURA|COURSERA", "subcategory_id": "cursos" },
+        { "pattern": "MENSALID|FACULD|UNIV|ESCOLA|COLEG", "subcategory_id": "mensalidades" },
+        { "pattern": "LIVRARIA|BOOK|AMAZON\\s*BOOK", "subcategory_id": "livros" }
+      ]
+    },
+    {
+      "id": "lazer",
+      "name": "Lazer",
+      "budget_pct_suggested": { "min": 0.03, "max": 0.12 },
+      "subcategories": [
+        { "id": "viagens", "name": "Viagens" },
+        { "id": "eventos", "name": "Eventos" },
+        { "id": "assinaturas", "name": "Assinaturas" },
+        { "id": "hobbies", "name": "Hobbies" }
+      ],
+      "keywords": [
+        { "pattern": "NETFLIX|SPOTIFY|AMAZON\\s*PRIME|DISNEY|HBO|YOUTUBE\\s*PREMIUM|DEEZER", "subcategory_id": "assinaturas" },
+        { "pattern": "AIRBNB|BOOKING|LATAM|GOL|AZUL|HOTEL", "subcategory_id": "viagens" },
+        { "pattern": "CINEMA|SHOW|EVENT", "subcategory_id": "eventos" }
+      ]
+    },
+    {
+      "id": "compras",
+      "name": "Compras",
+      "budget_pct_suggested": { "min": 0.03, "max": 0.15 },
+      "subcategories": [
+        { "id": "vestuario", "name": "Vestuário" },
+        { "id": "eletronicos", "name": "Eletrônicos" },
+        { "id": "casa", "name": "Casa" }
+      ],
+      "keywords": [
+        { "pattern": "MAGALU|MERCADO\\s*LIVRE|AMAZON(?!\\s*PRIME)", "subcategory_id": "eletronicos" },
+        { "pattern": "RENNE|CEA|RIACHUELO|ZARA|H\\&M|VESTU", "subcategory_id": "vestuario" },
+        { "pattern": "CASA\\s*BAHIA|TOK\\&STOK|MADEIRA\\s*MADEIRA|LER\\s*MERLIN|IKEA", "subcategory_id": "casa" }
+      ]
+    },
+    {
+      "id": "financeiro",
+      "name": "Financeiro",
+      "budget_pct_suggested": { "min": 0.00, "max": 0.05 },
+      "subcategories": [
+        { "id": "tarifas", "name": "Tarifas" },
+        { "id": "juros", "name": "Juros" },
+        { "id": "iof", "name": "IOF" },
+        { "id": "anuidade", "name": "Anuidade" },
+        { "id": "impostos", "name": "Impostos" }
+      ],
+      "keywords": [
+        { "pattern": "TARIFA|CESTA|PACOTE\\s*SERV", "subcategory_id": "tarifas" },
+        { "pattern": "JUROS|ENCARG", "subcategory_id": "juros" },
+        { "pattern": "IOF", "subcategory_id": "iof" },
+        { "pattern": "ANUIDADE", "subcategory_id": "anuidade" },
+        { "pattern": "DARF|IPTU|IPVA|IRPF|IMPOST", "subcategory_id": "impostos" }
+      ]
+    },
+    {
+      "id": "transferencias",
+      "name": "Transferências",
+      "budget_pct_suggested": { "min": 0.00, "max": 0.00 },
+      "subcategories": [
+        { "id": "pix_doc_ted", "name": "PIX/Doc/Ted entre contas" }
+      ],
+      "keywords": [
+        { "pattern": "PIX|TED|DOC|TRANSFER", "subcategory_id": "pix_doc_ted" }
+      ]
+    },
+    {
+      "id": "renda",
+      "name": "Renda",
+      "budget_pct_suggested": { "min": 0.00, "max": 0.00 },
+      "subcategories": [
+        { "id": "salario", "name": "Salário" },
+        { "id": "freela", "name": "Freelance" },
+        { "id": "reembolso", "name": "Reembolso" },
+        { "id": "outros", "name": "Outros" }
+      ],
+      "keywords": [
+        { "pattern": "SALAR|FOLHA|PAGAMENTO\\s*SAL", "subcategory_id": "salario" },
+        { "pattern": "FREELA|SERVICO\\s*PREST|NF\\s*|NOTA\\s*FISC", "subcategory_id": "freela" },
+        { "pattern": "REEMBOL", "subcategory_id": "reembolso" }
+      ]
+    },
+    {
+      "id": "outros",
+      "name": "Outros",
+      "budget_pct_suggested": { "min": 0.00, "max": 0.00 },
+      "subcategories": [
+        { "id": "nao_classificado", "name": "Não classificado" }
+      ],
+      "keywords": []
+    }
+  ],
+  "defaults": {
+    "unknown_category_id": "outros",
+    "unknown_subcategory_id": "nao_classificado",
+    "confidence_levels": ["Alta", "Média", "Baixa"]
+  }
+}
