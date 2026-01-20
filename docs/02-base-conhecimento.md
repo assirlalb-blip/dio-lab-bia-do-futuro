@@ -53,6 +53,7 @@ UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
     1) a lista de categorias permitidas (taxonomia),
     2) e as transações já normalizadas (com a “categoria sugerida” + “confiança”).
 - `stopwords_descricoes.json` é usado só na etapa de limpeza; não precisa entrar no prompt.
+```
 
 ---
 
