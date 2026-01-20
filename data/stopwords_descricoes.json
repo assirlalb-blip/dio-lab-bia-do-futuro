@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "stopwords": [
+    "COMPRA",
+    "PAGAMENTO",
+    "PAG",
+    "DEBITO",
+    "DEB",
+    "CREDITO",
+    "CRED",
+    "CARTAO",
+    "CREDITO",
+    "PIX",
+    "TED",
+    "DOC",
+    "TRANSFERENCIA",
+    "TRANSF",
+    "SAQUE",
+    "ELECTRON",
+    "APROVADO",
+    "PARCELA",
+    "PARC",
+    "ONLINE",
+    "LOJA",
+    "BR",
+    "BRA",
+    "BANCO",
+    "AG",
+    "CONTA"
+  ]
+}
