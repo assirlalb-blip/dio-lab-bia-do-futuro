@@ -45,7 +45,7 @@ ALLOWED_CATEGORIES = {c["id"]: c for c in CATEGORIAS_KB["categories"]}
 STOPWORDS = set(STOPWORDS_KB["stopwords"])
 UNKNOWN_CATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_category_id"]
 UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
-
+```
 ### Como os dados são usados no prompt?
 - O conteúdo de `categorias.json` não precisa ir inteiro no prompt; o backend pode:
   - aplicar regras/keywords primeiro (classificação determinística inicial),
@@ -53,7 +53,7 @@ UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
     1) a lista de categorias permitidas (taxonomia),
     2) e as transações já normalizadas (com a “categoria sugerida” + “confiança”).
 - `stopwords_descricoes.json` é usado só na etapa de limpeza; não precisa entrar no prompt.
-```
+
 
 ---
 
