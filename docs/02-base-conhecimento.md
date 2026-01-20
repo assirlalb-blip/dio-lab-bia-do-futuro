@@ -47,14 +47,72 @@ UNKNOWN_CATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_category_id"]
 UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
 ```
 ### Como os dados são usados no prompt?
-- O conteúdo de `categorias.json` não precisa ir inteiro no prompt; o backend pode:
-  - aplicar regras/keywords primeiro (classificação determinística inicial),
-  - e mandar ao LLM apenas:
-    1) a lista de categorias permitidas (taxonomia),
-    2) e as transações já normalizadas (com a “categoria sugerida” + “confiança”).
-- `stopwords_descricoes.json` é usado só na etapa de limpeza; não precisa entrar no prompt.
+```TAXONOMIA DE CATEGORIAS:
+{
+  "categorias": [
+    {
+      "id": "moradia",
+      "nome": "Moradia",
+      "subcategorias": ["Aluguel/Financiamento", "Condomínio", "Contas (água/luz/gás)", "Internet/Telefone", "Manutenção"],
+      "teto_sugerido_pct": { "min": 0.25, "max": 0.40 }
+    },
+    {
+      "id": "alimentacao",
+      "nome": "Alimentação",
+      "subcategorias": ["Supermercado", "Restaurante", "Delivery", "Cafés/Lanches"],
+      "teto_sugerido_pct": { "min": 0.10, "max": 0.20 }
+    },
+    {
+      "id": "transporte",
+      "nome": "Transporte",
+      "subcategorias": ["Combustível", "Transporte por app", "Transporte público", "Estacionamento", "Manutenção"],
+      "teto_sugerido_pct": { "min": 0.05, "max": 0.15 }
+    },
+    {
+      "id": "saude",
+      "nome": "Saúde",
+      "subcategorias": ["Farmácia", "Consultas/Exames", "Plano de saúde"],
+      "teto_sugerido_pct": { "min": 0.05, "max": 0.15 }
+    },
+    {
+      "id": "lazer",
+      "nome": "Lazer",
+      "subcategorias": ["Viagens", "Eventos", "Assinaturas", "Hobbies"],
+      "teto_sugerido_pct": { "min": 0.03, "max": 0.12 }
+    },
+    {
+      "id": "financeiro",
+      "nome": "Financeiro",
+      "subcategorias": ["Tarifas", "Juros", "IOF", "Anuidade", "Impostos"],
+      "teto_sugerido_pct": { "min": 0.00, "max": 0.05 }
+    },
+    {
+      "id": "renda",
+      "nome": "Renda",
+      "subcategorias": ["Salário", "Freelance", "Reembolso", "Outros"],
+      "teto_sugerido_pct": null
+    },
+    {
+      "id": "outros",
+      "nome": "Outros",
+      "subcategorias": ["Não classificado"],
+      "teto_sugerido_pct": null
+    }
+  ]
+}
 
-
+TRANSAÇÕES DO USUÁRIO:
+05/01/2026 | UBER *TRIP | -23.40
+06/01/2026 | IFOOD *RESTAURANTE | -51.90
+07/01/2026 | NETFLIX.COM | -55.90
+10/01/2026 | SUPERMERCADO EXTRA | -312.45
+10/01/2026 | SALARIO EMPRESA XYZ | +5000.00
+12/01/2026 | FARMACIA PACHECO | -89.00
+15/01/2026 | ALUGUEL JANEIRO | -1800.00
+15/01/2026 | CONDOMINIO | -450.00
+18/01/2026 | POSTO IPIRANGA | -250.00
+20/01/2026 | TARIFA MENSAL CONTA | -29.90
+```
 ---
 
 ## Exemplo de Contexto Montado
