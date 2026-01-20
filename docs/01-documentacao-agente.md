@@ -86,8 +86,8 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | Chatbot simples com campo para colar extrato/fatura e seletor de período (mês/ano). |
-| LLM | [ex: GPT-4 via API] |
+| Interface | Streamlit |
+| LLM | Ollama (local) |
 | Base de Conhecimento | JSON local com categorias/subcategorias + dicionário de palavras-chave (ex.: "UBER"→Transporte; "IFOOD"→Alimentação; "NETFLIX"→Assinaturas) + regras de saída (template).|
 | Validação | Regras determinísticas: checar se totais por categoria batem com total; detectar valores/datas ausentes; marcar baixa confiança; garantir que o agente não invente transações; mascarar/evitar dados sensíveis no output. |
 
