@@ -21,10 +21,30 @@
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-Os arquivos JSON da pasta `data/` são carregados no início da sessão do agente (startup do backend) e ficam em memória:
+> Descreva como seu agente acessa a base de conhecimento.
 
-- `categorias.json` → usado para validar categorias permitidas e mapear keywords → categoria/subcategoria
-- `stopwords_descricoes.json` → usado no pré-processamento de texto (normalização)
+Os arquivos JSON da pasta `data/` são carregados no início da sessão (startup do app). Exemplo em Python:
+
+```python
+import json
+from pathlib import Path
+
+DATA_DIR = Path("data")
+
+def load_json(filename: str) -> dict:
+    path = DATA_DIR / filename
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+# Carrega a base de conhecimento
+CATEGORIAS_KB = load_json("categorias.json")
+STOPWORDS_KB = load_json("stopwords_descricoes.json")
+
+# Atalhos úteis
+ALLOWED_CATEGORIES = {c["id"]: c for c in CATEGORIAS_KB["categories"]}
+STOPWORDS = set(STOPWORDS_KB["stopwords"])
+UNKNOWN_CATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_category_id"]
+UNKNOWN_SUBCATEGORY_ID = CATEGORIAS_KB["defaults"]["unknown_subcategory_id"]
 
 ### Como os dados são usados no prompt?
 - O conteúdo de `categorias.json` não precisa ir inteiro no prompt; o backend pode:
